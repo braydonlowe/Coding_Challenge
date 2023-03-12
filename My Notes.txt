@@ -1,0 +1,57 @@
+My Notes:
+
+
+I = 1
+V = 5
+X = 10
+L = 50
+C = 100
+D = 500
+M = 1000
+
+
+
+Basic ideas for the program.
+From Roman Numerals to Numbers:
+1) We need to take in a string and output a list of numbers that is equal to that of the length of the strings characters.
+
+2) We could make it a recursive function that adds numbers as it goes on through depth. First we can take on the first letter and check the second letter. If the first letter is greater than the second letter, add it to the total. If it's smaller than that of the second number we subtract the second number from the first number and skip to the third number in the index. When we call this recursively we can just slice the list and continue. (ie: [3:].. I could be wrong about the number so that might change)
+
+3) The recursive function described above will return the total number.
+
+
+#Rule number four is just saying basically that V L and D are never the ones that are used to do the subracting.
+
+4) If that's the case then if a number is equal to V, L, or D we can go ahead and add that to the total. 
+
+From Numbers to Roman Numerals:
+#This is a bit harder to visualize so lets walk through how to do 3,999
+#Keeping in mind that V, L, and D cannot be used to subract.
+
+1) Lets take the number 999. Numbers can only be subtracted by number behind them which means that if the number is anything less than an 8 then we have to do an add method.
+
+2) Taking that into account we only have to check if the number (By the number I mean the first number that the computer would in encounter by itterating) is 9 or 4. If it's a nine or four then we use the subtraction method. 
+	Subraction method: Given the number 999 we look the next largest roman numeral that comes after 999. In this case it would be M. 
+	To do this we can write it as a series of conditional statements.
+	1) 1 < number < 10 (it'll be easier to write it from the bottom up)
+		return I
+	2) 10 < number < 100
+		return X
+	3) 100 < number < 1000
+		return C
+	#Again remember that we don't return V, L, or D.
+	
+	After recieving this letter we need to take it and put it in front of the next largest letter. (which we already determined that in this case it would be M) So our answer in this case would be CM
+
+
+	addition method: If it's a number other than 8 or four we can create create a recursive function that always calls the next largest number. For example for 8.
+	return V
+	return I
+	return I
+	return I
+	The base case would be when the number hits 0.
+	
+
+
+Program and user interface:
+-) To make things easier for the person to input things into the program, the input shouldn't matter if it's upper case or lower case.
