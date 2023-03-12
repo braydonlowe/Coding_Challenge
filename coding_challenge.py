@@ -166,7 +166,7 @@ def numbers_to_numerals(number_string):
 
 def input_validate(input):
     list_of_characters = ["M", "D", "C", "L", "X", "V", "I"]
-    dictionary = {"M" : 1000, "D": 500, "C": 100, "L": 50, "X": 10, "I": 1}
+    dictionary = {"M" : 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}
     if input[0].isdigit():
         for number in input:
             if not number.isdigit():
@@ -255,6 +255,8 @@ def main():
         print("     ", alpha, spaces, digit)
 
     print("\n\n\n\n")
+
+    input("Thanks again! Press Enter to close: ")
 
 
 if __name__ == "__main__":
